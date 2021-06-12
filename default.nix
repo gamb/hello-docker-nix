@@ -2,6 +2,5 @@
 
 pkgs.dockerTools.buildImage {
   name = "hello-docker";
-  tag = "latest";
   config = { Cmd = [ "${pkgs.hello}/bin/hello" ]; };
 }
