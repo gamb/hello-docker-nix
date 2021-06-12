@@ -43,4 +43,6 @@ jobs:
       - uses: nixbuild/nixbuild-action@v4
         with:
           nixbuild_ssh_key: ${{ secrets.NIXBUILD_SSH }}
-      - run: nix-build -I nixpkgs=channel:nixos-20.03
+      - run: |
+        nix-build -I nixpkgs=channel:nixos-20.03
+        basename $(readlink ./result) | cut -d - -f1
