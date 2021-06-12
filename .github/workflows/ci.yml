@@ -44,5 +44,5 @@ jobs:
         with:
           nixbuild_ssh_key: ${{ secrets.NIXBUILD_SSH }}
       - run: |
-        nix-build -I nixpkgs=channel:nixos-20.03
-        basename $(readlink ./result) | cut -d - -f1
+          nix-build -I nixpkgs=channel:nixos-20.03
+          basename $(readlink ./result) | cut -d - -f1
